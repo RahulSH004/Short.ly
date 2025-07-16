@@ -53,7 +53,10 @@ const generateanalytics = async(req, res) => {
         }
         return res.json({
             totalclicks: result.clicks.length,
-            analytics: result.clicks
+            analytics: result.clicks,
+            shortUrl: result.shortUrl,
+            createdAt: result.createdAt,
+            clicks: result.clicks
         })
 
     }catch (error) {

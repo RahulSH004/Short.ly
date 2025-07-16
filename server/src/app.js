@@ -11,7 +11,7 @@ connectDB();
 
 // CORS configuration - only once
 const corsOptions = {
-  origin: ["http://localhost:5173","https://shortly-xi-lake.vercel.app/"],
+  origin: ["http://localhost:5173","https://shortly-xi-lake.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true

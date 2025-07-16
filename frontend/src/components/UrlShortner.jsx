@@ -17,8 +17,8 @@ const UrlShortener = () => {
     setError('');
     
     try {
-      console.log('API URL:', API_BASE_URL);
-      const response = await fetch(`${API_BASE_URL}/url/generate`, {
+      
+      const response = await fetch(`${API_BASE_URL}/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const UrlShortener = () => {
       });
       
       const data = await response.json();
-      console.log('Response data:', data);
+      
       
       if (response.ok) {
         setShortUrl(`${API_BASE_URL}/url/${data.shortUrl}`);
