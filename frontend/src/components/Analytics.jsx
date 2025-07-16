@@ -18,9 +18,7 @@ const Analytics = () => {
     try {
       const shortId = shortUrl.includes('/') ? shortUrl.split('/').pop() : shortUrl;
 
-      console.log('API_BASE_URL:', API_BASE_URL);
-      console.log('Short ID:', shortId);
-      console.log('Full URL:', `${API_BASE_URL}/url/analytics/${shortId}`);
+      
       
       const response = await fetch(`${API_BASE_URL}/url/analytics/${shortId}`, {
         method: 'GET',
