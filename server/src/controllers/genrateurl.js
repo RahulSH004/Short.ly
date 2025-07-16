@@ -52,11 +52,13 @@ const generateanalytics = async(req, res) => {
             return res.status(404).json({ message: "URL not found" });
         }
         return res.json({
-            totalclicks: result.clicks.length,
-            analytics: result.clicks,
-            shortUrl: result.shortUrl,
-            createdAt: result.createdAt,
-            clicks: result.clicks
+            totalClicks: result.clicks.length,    
+            originalUrl: result.url,              
+            shortUrl: result.shortUrl,            
+            createdAt: result.createdAt,          
+            clicks: result.clicks,                
+            clicksByDay: {},                      
+            recentClicks: result.clicks.slice(-10)
         })
 
     }catch (error) {

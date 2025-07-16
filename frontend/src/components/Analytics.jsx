@@ -17,6 +17,10 @@ const Analytics = () => {
     
     try {
       const shortId = shortUrl.includes('/') ? shortUrl.split('/').pop() : shortUrl;
+
+      console.log('API_BASE_URL:', API_BASE_URL);
+      console.log('Short ID:', shortId);
+      console.log('Full URL:', `${API_BASE_URL}/url/analytics/${shortId}`);
       
       const response = await fetch(`${API_BASE_URL}/url/analytics/${shortId}`, {
         method: 'GET',
@@ -134,7 +138,7 @@ const Analytics = () => {
                   <TrendingUp className="w-5 h-5 text-green-500" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">
-                  {analyticsData.totalClicks || 0}
+                  {analyticsData.totalClicks}
                 </div>
                 <div className="text-gray-600 text-sm">Total Clicks</div>
               </motion.div>
@@ -150,7 +154,7 @@ const Analytics = () => {
                   <BarChart3 className="w-5 h-5 text-blue-500" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">
-                  {analyticsData.totalClicks || 0}
+                  {analyticsData.totalClicks}
                 </div>
                 <div className="text-gray-600 text-sm">Unique Visitors</div>
               </motion.div>
@@ -182,7 +186,7 @@ const Analytics = () => {
                   <BarChart3 className="w-5 h-5 text-blue-500" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">
-                  {analyticsData.recentClicks?.length || 0}
+                  {analyticsData.recentClicks?.length}
                 </div>
                 <div className="text-gray-600 text-sm">Recent Clicks</div>
               </motion.div>
